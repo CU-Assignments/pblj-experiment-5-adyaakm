@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class AutoboxingUnboxingExample {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+
+        // Adding integers using autoboxing
+        numbers.add(Integer.parseInt("10"));
+        numbers.add(Integer.parseInt("20"));
+        numbers.add(Integer.parseInt("30"));
+        numbers.add(Integer.parseInt("40"));
+        numbers.add(Integer.parseInt("50"));
+
+        // Calculating sum using unboxing
+        int sum = calculateSum(numbers);
+
+        // Display the sum
+        System.out.println("Sum of numbers: " + sum);
+    }
+
+    public static int calculateSum(List<Integer> numbers) {
+        int sum = 0;
+        for (Integer num : numbers) {
+            sum += num; // Unboxing happens here
+        }
+        return sum;
+    }
+}
